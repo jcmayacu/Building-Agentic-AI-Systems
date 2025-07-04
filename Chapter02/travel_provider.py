@@ -35,6 +35,7 @@ class TravelProvider(BaseProvider):
             return {"error": "Departure and destination cities cannot be the same."}
         
         flights = []
+        
         for _ in range(num_options):
             airline = random.choice(['Delta', 'United', 'Southwest', 'JetBlue', 'American Airlines'])
             flight_number = f"{random.choice(['DL', 'UA', 'SW', 'JB', 'AA'])}{random.randint(100, 9999)}"
@@ -43,8 +44,8 @@ class TravelProvider(BaseProvider):
 
             # Generate random prices for each class
             economy_price = round(random.uniform(100, 300), 2)
-            # economy_plus_price = round(random.uniform(200, 400), 2)
-            # business_price = round(random.uniform(500, 1000), 2)
+            economy_plus_price = round(random.uniform(200, 400), 2)
+            business_price = round(random.uniform(500, 1000), 2)
 
             flights.append({
                 'airline': airline,
